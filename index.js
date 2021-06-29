@@ -14,10 +14,12 @@ http.createServer(function (req,resp) {
     });
     if (respMsg) {
         resp.write(respMsg);// 页面输出
+    } else {
+        resp.write('没有数据！');// 页面输出
     }
     resp.end();
 }).listen(port);
-console.log("服务器启动!端口:",port);
+console.log("服务器启动！使用端口:",port);
 
 //定义读取文件方法
 function read_file(path){
